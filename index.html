@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academia PowerFit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <a href="#inicio-topo" class="logo-link"><h1>PowerFit</h1></a>
+        <nav class="secao">
+            <a href="#sobre">Sobre</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section class="hero" id="inicio-topo">
+            <h2>Transforme seu corpo hoje</h2>
+            <p>Treinos personalizados e acompanhamento profissional</p>
+            <a href="#contato" class="btn">Começar Agora</a>
+        </section>
+
+        <section  id="sobre">
+            <h2>Sobre Nós</h2>
+            
+            <dl class="sobre-container">
+                <div class="sobre-item">
+                    <h3>Quem Somos</h3>
+                    <dd>A PowerFit nasceu com a missão de transformar a experiência de treino em algo extraordinário. Não somos apenas uma academia; somos um ecossistema de saúde e performance projetado para quem busca evolução constante. Na PowerFit, acreditamos que cada gota de suor é um passo em direção a uma versão mais forte, saudável e confiante de si mesmo.</dd>
+                </div>
+
+                <div class="sobre-item">
+                    <h3>Nossa Cultura</h3>
+                    <dd>Nossa cultura é baseada em três pilares: <b>Energia</b>, <b>Resultado</b> e <b>Comunidade</b>. <br>Aqui, o ambiente é movido pelo entusiasmo. Valorizamos o esforço individual, mas sabemos que a força do grupo nos leva mais longe. Tratamos cada aluno pelo nome e entendemos que cada jornada é única — por isso, acolhemos desde quem está dando o primeiro passo até atletas de alto rendimento.</dd>
+                </div>
+
+                <div class="sobre-item">
+                    <h3>Por que a PowerFit?</h3>
+                    <dd>Nosso diferencial está na união entre tecnologia e humanização. Oferecemos uma infraestrutura moderna, com equipamentos de ponta e ambientes climatizados, sem abrir mão do acompanhamento profissional atento e próximo.</dd>
+                </div>
+            </dl>
+
+            <a href="#contato" class="btn">Começar Agora</a>
+        </section>
+
+        <section id="servicos">
+            <h2>Serviços</h2>
+            
+            <div class="cards">
+                <div class="card" onclick="clicar(0)">Musculação</div>
+                <div class="card" onclick="clicar(1)">Personal Trainer</div>
+                <div class="card" onclick="clicar(2)">Treinos Funcionais</div>
+            </div>
+
+            <div id="descricao"></div>
+        </section>
+
+        <section id="contato">
+            <h2>Fale Conosco</h2>
+
+            <form id="formulario" action="salvar.php" method="POST" novalidate>
+                
+                <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                
+                <input type="text" name="telefone" id="telefone" placeholder="Telefone">
+                
+                <textarea name="mensagem" id="campoMensagem" placeholder="Mensagem"></textarea>
+                
+                <button type="submit">Enviar</button>
+
+                <div id="mensagem"></div>
+            </form>
+
+            <footer>
+                <p>&copy; 2026 PowerFit</p>
+            </footer>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
