@@ -287,42 +287,55 @@ textarea:-webkit-autofill {
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     header {
-        padding: 10px 20px;
+        position: fixed !important; /* Trava no topo em todas as páginas */
+        top: 0;
+        left: 0;
+        padding: 15px 10px !important;
         flex-direction: column;
         gap: 8px;
+        background: rgba(0, 0, 0, 0.95) !important; /* Fundo sólido para não ver o conteúdo atrás */
+        z-index: 99999 !important; /* Fica acima de todas as seções */
     }
 
     header h1 {
         font-size: 22px;
-        margin-bottom: 5px;
+        margin-bottom: 2px;
     }
 
     nav {
         display: flex;
         justify-content: center;
-        gap: 10px;
+        width: 100%;
     }
 
     nav a {
-        margin: 0 5px;
+        margin: 0 8px;
         font-size: 12px;
     }
     
+    /* RESOLVE AS SEÇÕES SE MISTURANDO */
     section {
-        min-height: 100vh !important; /* Garante que uma seção ocupe a tela toda e não deixe a outra subir */
+        min-height: 100vh !important; /* Cada seção ocupa a tela inteira */
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Centraliza o conteúdo no meio da tela do celular */
-        padding-top: 100px !important; /* Espaço para o header fixo */
+        justify-content: flex-start; /* Conteúdo começa no topo com folga */
+        padding-top: 160px !important; /* Espaço para o header + margem de segurança */
         padding-bottom: 50px;
+        border-bottom: 1px solid #222; /* Linha sutil para separar as seções visualmente */
     }
 
-    /* Ajuste para impedir o zoom automático ao clicar nos campos */
-    input, textarea {
-        font-size: 16px !important;
+    /* Primeira seção precisa de mais espaço */
+    .hero {
+        padding-top: 180px !important;
     }
 
-    /* Ajuste para as imagens de fundo não bugarem no celular */
+    /* MATA O ZOOM NO FORMULÁRIO */
+    input, textarea, select, 
+    input:focus, textarea:focus {
+        font-size: 16px !important; /* 16px é o limite para o iOS não dar zoom */
+    }
+
+    /* CORRIGE O FUNDO NO CELULAR */
     .hero, .container, #contato {
         background-attachment: scroll !important;
         background-size: cover;
@@ -337,21 +350,21 @@ textarea:-webkit-autofill {
     }
 
     h2 { 
-        font-size: 28px;
+        font-size: 28px; 
+        text-align: center;
         margin-bottom: 30px;
-        text-align: center; 
     }
 
     .card {
         width: 100%;
+        padding: 18px;
         text-align: center;
-        padding: 15px;
     }
 
     #descricao {
         width: 100%;
-        min-height: 150px;
         font-size: 1rem;
+        min-height: 120px;
     }
 
     form {
