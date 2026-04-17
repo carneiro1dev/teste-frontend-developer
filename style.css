@@ -287,68 +287,70 @@ textarea:-webkit-autofill {
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     header {
-        padding: 15px;
-        position: relative; /* Muda para não flutuar no celular e não cobrir o conteúdo */
+        padding: 10px 20px;
         flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        gap: 8px;
     }
-    
+
     header h1 {
-        font-size: 24px;
+        font-size: 22px;
+        margin-bottom: 5px;
     }
 
     nav {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
     }
 
     nav a {
-        margin: 5px 10px;
+        margin: 0 5px;
         font-size: 12px;
     }
+    
+    section {
+        min-height: 100vh !important; /* Garante que uma seção ocupe a tela toda e não deixe a outra subir */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centraliza o conteúdo no meio da tela do celular */
+        padding-top: 100px !important; /* Espaço para o header fixo */
+        padding-bottom: 50px;
+    }
 
-    /* Resolve o fundo cortado no celular */
+    /* Ajuste para impedir o zoom automático ao clicar nos campos */
+    input, textarea {
+        font-size: 16px !important;
+    }
+
+    /* Ajuste para as imagens de fundo não bugarem no celular */
     .hero, .container, #contato {
-        background-attachment: scroll !important; /* Desativa o fixed que buga no celular */
+        background-attachment: scroll !important;
         background-size: cover;
         background-position: center;
-        min-height: auto;
-    }
-
-    .hero {
-        height: 70vh; /* Diminui a altura da capa no celular */
-    }
-
-    section { 
-        padding: 60px 20px; /* Ajusta o espaçamento das seções */
-        min-height: auto;
     }
 
     .sobre-container, .cards {
         flex-direction: column;
         width: 100%;
         gap: 15px;
-    }
-
-    .sobre-item {
-        padding: 20px;
+        padding: 0 10px;
     }
 
     h2 { 
-        font-size: 28px; 
+        font-size: 28px;
         margin-bottom: 30px;
+        text-align: center; 
     }
 
     .card {
         width: 100%;
         text-align: center;
+        padding: 15px;
     }
 
     #descricao {
         width: 100%;
+        min-height: 150px;
         font-size: 1rem;
     }
 
