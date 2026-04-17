@@ -4,7 +4,7 @@ Este projeto foi desenvolvido como parte do processo seletivo para a vaga de Est
 
 ## Demonstracao Online
 O projeto esta hospedado e funcional no link abaixo:
-http://academiapowerfit.infinityfreeapp.com/
+https://academia-powerfit-teste.infinityfreeapp.com/?i=1
 
 ## Tecnologias Utilizadas
 - Frontend: HTML5, CSS3 e JavaScript Vanilla.
