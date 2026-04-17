@@ -287,13 +287,16 @@ textarea:-webkit-autofill {
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
     header {
+        position: absolute;
         padding: 20px;
         flex-direction: column;
         gap: 15px;
-        /* Garante que o header continue fixo e no topo */
-        position: fixed;
-        top: 0;
-        width: 100%;
+    }
+
+    .hero, .container, #contato {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center !important;
     }
     
     .sobre-container, .cards {
@@ -301,22 +304,7 @@ textarea:-webkit-autofill {
         width: 100%;
     }
 
-    h2 { font-size: 32px; 
-    }
+    h2 { font-size: 32px; }
     
-    section { 
-        padding: 140px 20px 80px; 
-    }
-
-    /* AJUSTE DA IMAGEM DE FUNDO */
-    .hero, .container, #contato {
-        background-attachment: scroll !important;
-        background-size: cover;
-        background-position: center;
-    }
-
-    /* AJUSTE PARA O FORMULÁRIO NÃO DAR ZOOM */
-    input, textarea {
-        font-size: 16px !important;
-    }
+    section { padding: 80px 20px; }
 }
