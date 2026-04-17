@@ -275,32 +275,87 @@ footer {
     opacity: 0.7;
 }
 
-/*Para remover o fundo branco do preenchimento automático */
+/*Para remover o fundo branco do preenchimento automático (desktop e mobile) */
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
+input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus {
+textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset !important; 
     -webkit-text-fill-color: #fff !important;
-    transition: background-color 5000s ease-in-out 0s;
 }
 
-/* 8. RESPONSIVIDADE */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     header {
-        padding: 20px;
+        padding: 15px;
+        position: relative; /* Muda para não flutuar no celular e não cobrir o conteúdo */
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
+        text-align: center;
     }
     
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        font-size: 12px;
+    }
+
+    /* Resolve o fundo cortado no celular */
+    .hero, .container, #contato {
+        background-attachment: scroll !important; /* Desativa o fixed que buga no celular */
+        background-size: cover;
+        background-position: center;
+        min-height: auto;
+    }
+
+    .hero {
+        height: 70vh; /* Diminui a altura da capa no celular */
+    }
+
+    section { 
+        padding: 60px 20px; /* Ajusta o espaçamento das seções */
+        min-height: auto;
+    }
+
     .sobre-container, .cards {
         flex-direction: column;
         width: 100%;
+        gap: 15px;
     }
 
-    h2 { font-size: 32px; }
-    
-    section { padding: 80px 20px; }
+    .sobre-item {
+        padding: 20px;
+    }
+
+    h2 { 
+        font-size: 28px; 
+        margin-bottom: 30px;
+    }
+
+    .card {
+        width: 100%;
+        text-align: center;
+    }
+
+    #descricao {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    form {
+        width: 100%;
+        padding: 0 10px;
+    }
 }
+
 
